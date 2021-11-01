@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.scss';
 import { Button } from './components/Buttons/Button';
+import { DropDown } from './components/DropDown/DropDown';
 
 function App() {
   //for demonstration
@@ -8,36 +9,18 @@ function App() {
     return alert("callback")
   }
 
+  const dataDrop = ["123", "124", "125", "126", "127"]
+
   return (
     <div className="App">
         <Button
-              type="primary"
               callback={click}
-              loading
               >CLICK
         </Button>
-        <Button
-              type="danger"
-              callback={click}
-              loading
-              >CLICK
-        </Button>
-        <Button
-              type="success"
-              callback={click}
-              loading
-              disabled
-              >CLICK
-        </Button>
-        <Button
-              type="warning"
-              callback={click}
-              loading
-              large
-              outlined
-              text
-              >CLICK
-        </Button>
+        <DropDown
+              data={dataDrop}
+              >DropDown
+        </DropDown>
     </div>
   );
 }
