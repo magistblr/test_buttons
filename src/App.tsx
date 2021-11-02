@@ -20,8 +20,8 @@ function App() {
               >CLICK {icon}
         </Button>
         <Button
+              type='success'
               loading
-              block
               callback={click}
               >CLICK {icon}
         </Button>

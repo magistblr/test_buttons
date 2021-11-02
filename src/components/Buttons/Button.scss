@@ -103,6 +103,11 @@
 
 .primary.btn_outlined, .primary.btn_text{
   color: rgb(52, 82, 255);
+  .btn__spinner{
+    & .path {
+      stroke: rgb(52, 82, 255);
+    }
+  }
 }
 .primary.btn_outlined:hover, .primary.btn_text:hover {
   background-color: rgba(52, 82, 255, 0.1);
@@ -110,6 +115,11 @@
 
 .danger.btn_outlined, .danger.btn_text{
   color: rgb(236, 42, 42);
+  .btn__spinner{
+    & .path {
+      stroke: rgb(236, 42, 42);
+    }
+  }
 }
 .danger.btn_outlined:hover, .danger.btn_text:hover {
   background-color: rgba(236, 42, 42, 0.1);
@@ -117,6 +127,11 @@
 
 .success.btn_outlined, .success.btn_text{
   color: rgb(52, 182, 0);
+  .btn__spinner{
+    & .path {
+      stroke: rgb(52, 182, 0);
+    }
+  }
 }
 .success.btn_outlined:hover, .success.btn_text:hover {
   background-color: rgba(52, 182, 0, 0.1);
@@ -124,6 +139,11 @@
 
 .warning.btn_outlined, .warning.btn_text{
   color: rgb(190, 190, 2);
+  .btn__spinner{
+    & .path {
+      stroke: rgb(190, 190, 2);
+    }
+  }
 }
 .warning.btn_outlined:hover, .warning.btn_text:hover {
   background-color: rgba(190, 190, 2, 0.1);

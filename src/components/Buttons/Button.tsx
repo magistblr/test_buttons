@@ -20,7 +20,7 @@ export const Button: React.FC<ButtonType> = ({ children, ...props}) => {
   const childrenElem = React.Children.toArray(children)
   const icon = childrenElem[1] ? String(childrenElem[1]) : undefined
 
-  const spinner = <svg className="btn__spinner" viewBox="0 0 50 50"><circle className="path" cx="25" cy="25" r="15" fill="none" stroke-width="4"></circle></svg>
+  const spinner = <svg className="btn__spinner" viewBox="0 0 50 50"><circle className="path" cx="25" cy="25" r="15" fill="none" strokeWidth="4"></circle></svg>
   const minStyle = min && "btn_min"
   const largeStyle = large && "btn_large"
   const blockStyle = block && "btn_block"
