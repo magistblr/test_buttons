@@ -19,12 +19,6 @@ function App() {
               callback={click}
               >CLICK {icon}
         </Button>
-        <Button
-              type='success'
-              loading
-              callback={click}
-              >CLICK {icon}
-        </Button>
         <DropDown
               data={dataDrop}
               >DROPDOWN
