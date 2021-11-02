@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import "./Button.scss"
 
 export type ButtonType = {
@@ -17,8 +17,9 @@ export type ButtonType = {
 export const Button: React.FC<ButtonType> = ({ children, ...props}) => {
 
   const {disabled, type, callback, loading, min, large, block, outlined, text} = props
-  console.log("render");
-  
+  const childrenElem = React.Children.toArray(children)
+  const icon = childrenElem[1] ? String(childrenElem[1]) : undefined
+
   const spinner = <svg className="btn__spinner" viewBox="0 0 50 50"><circle className="path" cx="25" cy="25" r="15" fill="none" stroke-width="4"></circle></svg>
   const minStyle = min && "btn_min"
   const largeStyle = large && "btn_large"
@@ -29,7 +30,9 @@ export const Button: React.FC<ButtonType> = ({ children, ...props}) => {
   return (
     <div className="button">
       <button onClick={callback} className={`btn ${type ? type : "primary"} ${minStyle} ${largeStyle} ${blockStyle} ${outlinedStyle} ${textStyle}`} disabled={disabled}>
-        {loading ? spinner : <p className="btn__text">{children}</p>}
+        {loading
+            ? spinner
+            : <div className="btn__content">{childrenElem[0]} {icon && <img className="btn__content-icon" src={icon} alt="icon"/>}</div> }
       </button>
     </div>
   )

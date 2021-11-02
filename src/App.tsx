@@ -9,17 +9,25 @@ function App() {
     return alert("callback")
   }
 
+  const icon = "https://cdn.iconscout.com/icon/free/png-128/redux-2749334-2284724.png"
+
   const dataDrop = ["123", "124", "125", "126", "127"]
 
   return (
     <div className="App">
         <Button
               callback={click}
-              >CLICK
+              >CLICK {icon}
+        </Button>
+        <Button
+              loading
+              block
+              callback={click}
+              >CLICK {icon}
         </Button>
         <DropDown
               data={dataDrop}
-              >DropDown
+              >DROPDOWN
         </DropDown>
     </div>
   );

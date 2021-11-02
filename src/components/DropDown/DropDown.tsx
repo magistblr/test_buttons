@@ -7,10 +7,11 @@ type DropDownType = {
 };
 
 export const DropDown: React.FC<DropDownType & ButtonType> = ({ children, ...props }) => {
-  const [drop, setDrop] = useState<boolean>(true);
-  const sortRef = React.useRef<HTMLInputElement>(null);
   const { data, disabled, type, loading, min, large, block, outlined, text} = props;
 
+  const [drop, setDrop] = useState<boolean>(false);
+  const sortRef = React.useRef<HTMLInputElement>(null);
+  
   const changeDropHandler = () => {
       setDrop(!drop);
   };
@@ -25,18 +26,18 @@ export const DropDown: React.FC<DropDownType & ButtonType> = ({ children, ...pro
 
 
   React.useEffect(() => {
-    document.addEventListener('click', handleOutsideClick );
-    return ()=> document.removeEventListener('click', handleOutsideClick )
+    document.body.addEventListener('click', handleOutsideClick );
+    return ()=> document.body.removeEventListener('click', handleOutsideClick )
   }, []);
 
   return (
     <div className="dropDown" ref={sortRef}>
-      <Button callback={changeDropHandler} type={type} disabled={disabled} loading={loading} min={min} large={large} block={block} outlined={outlined} text={text}>DROPDOWN</Button>
+      <Button callback={changeDropHandler} type={type} disabled={disabled} loading={loading} min={min} large={large} block={block} outlined={outlined} text={text}>{children}</Button>
       <div className="dropDown__items-wrapper">
-        {
+        {drop &&
           <ul className={`dropDown__items ${drop && "dropDown__items_active"}`}>
-            {data.map((i) => (
-              <li onClick={changeDropHandler} className="dropDown__item">{i}</li>
+            {data.map((elem,i) => (
+              <li key={i} onClick={changeDropHandler} className="dropDown__item">{elem}</li>
             ))}
           </ul>
         }

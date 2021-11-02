@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   margin-top: 10px;
+  width: 850px
 }
 
 
@@ -9,17 +10,29 @@
   background-color: rgb(52, 82, 255);
   border: 1px solid rgb(52, 82, 255)
 }
+.primary:hover {
+  background-color: rgba(52, 82, 255, 0.8);
+}
 .danger {
   background-color: rgb(236, 42, 42);
   border: 1px solid rgb(236, 42, 42)
+}
+.danger:hover {
+  background-color: rgba(236, 42, 42, 0.8);
 }
 .success  {
   background-color: rgb(52, 182, 0);
   border: 1px solid rgb(52, 182, 0)
 }
+.success:hover {
+  background-color: rgba(52, 182, 0, 0.8);
+}
 .warning  {
-  background-color: rgb(224, 224, 0);
-  border: 1px solid rgb(224, 224, 0)
+  background-color: rgb(190, 190, 2);
+  border: 1px solid rgb(190, 190, 2)
+}
+.warning:hover {
+  background-color: rgba(190, 190, 2, 0.8);
 }
 
 
@@ -36,8 +49,10 @@
   transition: 0.2s;
   color: white;
   box-shadow: 0 2px 5px rgba(0,0,0,0.25);
+  letter-spacing: 1px;
+  font-weight: 600;
+  font-size: .9rem;
   &:hover{
-    opacity: 0.8;
     transition: 0.2s;
   }
   &[disabled]{
@@ -49,22 +64,27 @@
   }
 }
 
-
-
-.btn__text{
-  font-weight: 500;
-  font-size: .875rem;
+.btn__content{
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 
+.btn__content-icon{
+  margin: 0 5px;
+  height: 80%;
+}
 
 
 .btn_min{
+  font-size: 0.8rem;
   height: 28px;
-  min-width: 50px;
+  min-width: 35px;
 }
 .btn_large{
-  height: 44px;
-  min-width: 78px;
+  font-size: 1.1rem;
+  height: 50px;
+  min-width: 110px;
 }
 .btn_block{
   width: 100%;
@@ -73,13 +93,48 @@
   background-color:transparent;
 }
 .btn_text {
-  color:unset;
   border-color: rgba(0,0,0,.12);
+  background-color:transparent;
 }
 
 
 
+
+
+.primary.btn_outlined, .primary.btn_text{
+  color: rgb(52, 82, 255);
+}
+.primary.btn_outlined:hover, .primary.btn_text:hover {
+  background-color: rgba(52, 82, 255, 0.1);
+}
+
+.danger.btn_outlined, .danger.btn_text{
+  color: rgb(236, 42, 42);
+}
+.danger.btn_outlined:hover, .danger.btn_text:hover {
+  background-color: rgba(236, 42, 42, 0.1);
+}
+
+.success.btn_outlined, .success.btn_text{
+  color: rgb(52, 182, 0);
+}
+.success.btn_outlined:hover, .success.btn_text:hover {
+  background-color: rgba(52, 182, 0, 0.1);
+}
+
+.warning.btn_outlined, .warning.btn_text{
+  color: rgb(190, 190, 2);
+}
+.warning.btn_outlined:hover, .warning.btn_text:hover {
+  background-color: rgba(190, 190, 2, 0.1);
+}
+
+
+
+
+
 .btn__spinner {
+  height: 100%;
   animation: rotate 2s linear infinite;
   & .path {
     stroke: rgb(255, 255, 255);
