@@ -19,7 +19,6 @@
   left: 50%;
   transform: translateX(-50%);
   list-style-type: none;
-  padding: 5px 0px;
   margin: 0;
   list-style: none;
   transition: 0.5s;
@@ -41,4 +40,8 @@
   min-height: 48px;
   cursor: pointer;
   background-color: #ffffff;
+}
+
+.dropDown__item:hover{
+  background-color: rgba(0, 0, 0, 0.1);
 }
